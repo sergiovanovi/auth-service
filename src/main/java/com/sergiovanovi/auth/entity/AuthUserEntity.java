@@ -18,11 +18,6 @@ public class AuthUserEntity {
     @Id
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @MapsId
-    @JoinColumn(name = "id")
-    private AuthLoginEntity authLogin;
-
     @Column(name = "NICKNAME")
     private String nickName;
 
@@ -31,4 +26,9 @@ public class AuthUserEntity {
 
     @Column(name = "PHONE")
     private String phone;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @MapsId
+    @JoinColumn(name = "id")
+    private AuthLoginEntity authLogin;
 }

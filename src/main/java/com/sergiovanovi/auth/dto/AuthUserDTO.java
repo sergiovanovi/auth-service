@@ -13,11 +13,11 @@ public class AuthUserDTO implements Serializable {
 
     private Long id;
 
-    private AuthLoginDTO authLogin;
-
     private String nickName;
 
     private String email;
 
     private String phone;
+
+    private AuthLoginDTO authLogin;
 }
